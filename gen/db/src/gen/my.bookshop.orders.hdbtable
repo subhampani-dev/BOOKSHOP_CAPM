@@ -1,0 +1,12 @@
+COLUMN TABLE my_bookshop_orders (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  book_ID INTEGER,
+  quatity INTEGER,
+  PRIMARY KEY(ID)
+) WITH ASSOCIATIONS (
+  MANY TO ONE JOIN my_bookshop_Books AS book ON (book.ID = book_ID)
+)

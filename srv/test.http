@@ -1,0 +1,32 @@
+get http://localhost:4004/odata/v4/catalog/Books
+
+###
+
+POST  http://localhost:4004/odata/v4/sap/library/Books
+Content-Type: application/json
+
+ {
+      "ID": 1314,
+      "title": "The NARNIA STORY"
+      
+    }
+
+###
+
+POST   http://localhost:4004/odata/v4/sap/library/orders
+Content-Type: application/json
+
+ {
+      "book_ID": 1314,
+      "quatity": 10
+      
+    }
+
+
+###
+
+get http://localhost:4004/odata/v4/sap/library/author?$expand=books
+
+
+###
+GET http://localhost:4004/odata/v4/stats/OrderInfo

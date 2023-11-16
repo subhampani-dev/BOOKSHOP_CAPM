@@ -1,0 +1,7 @@
+COLUMN TABLE my_bookshop_Authors (
+  ID INTEGER NOT NULL,
+  name NVARCHAR(100),
+  PRIMARY KEY(ID)
+) WITH ASSOCIATIONS (
+  MANY TO MANY JOIN my_bookshop_Books AS books ON (books.author_ID = ID)
+)

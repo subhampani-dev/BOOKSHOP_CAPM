@@ -1,0 +1,7 @@
+VIEW CatalogService_author AS SELECT
+  Authors_0.ID,
+  Authors_0.name
+FROM my_bookshop_Authors AS Authors_0
+WITH ASSOCIATIONS (
+  MANY TO MANY JOIN CatalogService_Books AS books ON (books.author_ID = ID)
+)

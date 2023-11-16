@@ -1,0 +1,12 @@
+VIEW CatalogService_orders AS SELECT
+  orders_0.ID,
+  orders_0.createdAt,
+  orders_0.createdBy,
+  orders_0.modifiedAt,
+  orders_0.modifiedBy,
+  orders_0.book_ID,
+  orders_0.quatity
+FROM my_bookshop_orders AS orders_0
+WITH ASSOCIATIONS (
+  MANY TO ONE JOIN CatalogService_Books AS book ON (book.ID = book_ID)
+)
